@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dynamic Time-Based Webpage</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      color: white;
+      text-align: center;
+      padding-top: 20%;
+      transition: background-color 0.5s ease;
+    }
+  </style>
+</head>
+<body onload="setBackgroundColor()">
+  <h1>Kayla Heady</h1>
+  <p><strong>Course:</strong> Web Development 101</p>
+  <p><strong>Major:</strong> Computer Science</p>
+  <h2>Welcome to my dynamic webpage!</h2>
+
+  <script>
+    function setBackgroundColor() {
+      const hour = new Date().getHours();
+      let color;
+
+      if (hour >= 6 && hour < 12) {
+        color = "#FFFAE3"; // Morning (light yellow)
+      } else if (hour >= 12 && hour < 18) {
+        color = "#FFD580"; // Afternoon (warm orange)
+      } else if (hour >= 18 && hour < 21) {
+        color = "#FFA07A"; // Evening (soft salmon)
+      } else {
+        color = "#2C3E50"; // Night (dark blue)
+      }
+
+      document.body.style.backgroundColor = color;
+    }
+  </script>
+</body>
+</html>
